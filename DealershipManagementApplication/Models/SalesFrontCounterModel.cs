@@ -9,10 +9,21 @@ namespace DealershipManagementApplication.Models
 {
     public class SalesFrontCounterModel : INotifyPropertyChanged
     {
+        public SalesFrontCounterModel()
+        {
+            PaymentInformation = new SalesFrontPaymentInformation();
+        }
+
         public List<InternalPay> InternalPayDetails { get; set; }
         public List<CustomerPay> CustomerPayDetails { get; set; }
         public List<InternalPay> WarrantyPayDetails { get; set; }
-
+        
+        private SalesFrontPaymentInformation _PaymentInformation;
+        public SalesFrontPaymentInformation PaymentInformation
+        {
+            get { return _PaymentInformation; }
+            set { _PaymentInformation = value; }
+        }
 
         #region INotifyPropertyChanged
         new public event PropertyChangedEventHandler PropertyChanged;
@@ -174,6 +185,86 @@ namespace DealershipManagementApplication.Models
         }
 
     
+    }
+    
+    public class SalesFrontPaymentInformation
+    {
+        private int _DepartmentID;
+        public int DepartmentID
+        {
+            get { return _DepartmentID; }
+            set { _DepartmentID = value; }
+        }
+
+        private string _SellingLocation;
+        public string SellingLocation
+        {
+            get { return _SellingLocation; }
+            set { _SellingLocation = value; }
+        }
+
+        private int _SalesTypeID;
+        public int SalesTypeID
+        {
+            get { return _SalesTypeID; }
+            set { _SalesTypeID = value; }
+        }
+
+        private int _StockID;
+        public int StockID
+        {
+            get { return _StockID; }
+            set { _StockID = value; }
+        }
+
+        private int _Owner;
+        public int Owner
+        {
+            get { return _Owner; }
+            set { _Owner = value; }
+        }
+
+        private int _ShipTo;
+        public int ShipTo
+        {
+            get { return _ShipTo; }
+            set { _ShipTo = value; }
+        }
+
+        private DateTime _DateOpened;
+        public DateTime DateOpened
+        {
+            get { return _DateOpened; }
+            set { _DateOpened = value; }
+        }
+
+        private DateTime _DateClosed;
+        public DateTime DateClosed
+        {
+            get { return _DateClosed; }
+            set { _DateClosed = value; }
+        }
+
+        private DateTime _PostingDate;
+        public DateTime PostingDate
+        {
+            get { return _PostingDate; }
+            set { _PostingDate = value; }
+        }
+
+        private DateTime _EstimatedExpirationDate;
+        public DateTime EstimatedExpirationDate
+        {
+            get { return _EstimatedExpirationDate; }
+            set { _EstimatedExpirationDate = value; }
+        }
+
+        private int _ShipingMethod;
+        public int ShipingMethod
+        {
+            get { return _ShipingMethod; }
+            set { _ShipingMethod = value; }
+        }
     }
     
 }
