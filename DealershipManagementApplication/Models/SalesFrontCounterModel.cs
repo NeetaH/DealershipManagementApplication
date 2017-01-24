@@ -17,7 +17,7 @@ namespace DealershipManagementApplication.Models
         public List<InternalPay> InternalPayDetails { get; set; }
         public List<CustomerPay> CustomerPayDetails { get; set; }
         public List<InternalPay> WarrantyPayDetails { get; set; }
-        
+
         private SalesFrontPaymentInformation _PaymentInformation;
         public SalesFrontPaymentInformation PaymentInformation
         {
@@ -54,7 +54,7 @@ namespace DealershipManagementApplication.Models
             set { _NetReceivingAmount = value; }
         }
     }
-   
+
     public class CustomerPay
     {
         private bool _UseOutOfStateTax;
@@ -184,12 +184,10 @@ namespace DealershipManagementApplication.Models
             set { _AmountSubmitted = value; }
         }
 
-    
     }
-    
+
     public class SalesFrontPaymentInformation
     {
-
         private int _DepartmentID;
         public int DepartmentID
         {
@@ -267,5 +265,5 @@ namespace DealershipManagementApplication.Models
             set { _ShipingMethod = value; }
         }
     }
-    
+
 }
