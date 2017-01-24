@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealershipManagementApplication", "DealershipManagementApplication\DealershipManagementApplication.csproj", "{46E472CA-CADA-4A0D-B83C-660AEB4ACB99}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonLayer", "CommonLayer", "{C44F9293-01D2-49AF-98B9-C2B57E37BBF9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMS.AppCommon", "DMS.AppCommon\DMS.AppCommon.csproj", "{CC4AF701-7648-49A8-ADC7-87B2B528478D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +19,15 @@ Global
 		{46E472CA-CADA-4A0D-B83C-660AEB4ACB99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46E472CA-CADA-4A0D-B83C-660AEB4ACB99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46E472CA-CADA-4A0D-B83C-660AEB4ACB99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC4AF701-7648-49A8-ADC7-87B2B528478D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC4AF701-7648-49A8-ADC7-87B2B528478D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC4AF701-7648-49A8-ADC7-87B2B528478D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC4AF701-7648-49A8-ADC7-87B2B528478D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CC4AF701-7648-49A8-ADC7-87B2B528478D} = {C44F9293-01D2-49AF-98B9-C2B57E37BBF9}
 	EndGlobalSection
 EndGlobal

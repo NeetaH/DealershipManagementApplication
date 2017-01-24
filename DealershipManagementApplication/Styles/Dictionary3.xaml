@@ -1,0 +1,934 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
+                    xmlns:Sync_Resources="clr-namespace:Syncfusion.Windows.Tools.Controls.Resources;assembly=Syncfusion.Tools.Wpf"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Syncfusion.Tools.WPF;component/Framework/DockingManager/themes/office2010bluestyle.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <Sync_Resources:ResourceWrapper x:Key="ResourceWrapperKey"/>
+    <Style BasedOn="{StaticResource Office2010BlueDockHeaderPresenterStyle}" TargetType="{x:Type Syncfusion:DockHeaderPresenter}" x:Key="Office2010BlueDockHeaderPresenterStyle1">
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="MinHeight" Value="17"/>
+        <Style.Triggers>
+            <Trigger Property="UseNativeFloatWindow" Value="True">
+                <Setter Property="Template" >
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Syncfusion:DockHeaderPresenter}">
+
+                            <Border  x:Name="borderTop" Width="Auto" Height="Auto"
+				 BorderBrush="{StaticResource Office2010BlueHeaderBorderBrush}"
+				 BorderThickness="1.5"
+                 Background="{StaticResource Office2010Blue.HeaderBackground}"
+				 >
+                                <Border.ContextMenu>
+                                    <Syncfusion:CustomContextMenu Name="PART_ContextMenu"  Focusable="false" />
+                                </Border.ContextMenu>
+                                <Grid>
+                                    <DockPanel LastChildFill="True" >
+                                        <ToggleButton Name="PART_CloseButton" DockPanel.Dock="Right" Focusable="False"
+							Command="Syncfusion:DockHeaderPresenter.CloseCommand"
+							Template="{Binding Path=ElementHost.DockingManager.CloseButtonTemplate
+								, RelativeSource={RelativeSource TemplatedParent}}"
+              Foreground="{StaticResource Office2010Blue.HeaderForeground}"
+					>
+                                            <ToggleButton.ToolTip>
+                                                <ToolTip Name="tooltip" >
+                                                    <TextBlock Name="PART_CloseButtonTooltipText" Text="{Binding Source={StaticResource ResourceWrapperKey}, Path=CloseButtonTooltipText}" />
+                                                </ToolTip>
+                                            </ToggleButton.ToolTip>
+                                        </ToggleButton>
+                                        <ToggleButton Name="PART_AwlButton" DockPanel.Dock="Right" Focusable="False"
+                                  VerticalAlignment="Top"
+                                  Command="Syncfusion:DockHeaderPresenter.ChangeAwlStateCommand"
+                                  Template="{Binding Path=ElementHost.DockingManager.AwlButtonTemplate
+									, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Foreground="{StaticResource Office2010Blue.AwlKeyImg}"
+				>
+                                            <ToggleButton.ToolTip>
+                                                <ToolTip Name="PART_AwlButtonTooltip">
+                                                    <TextBlock Name="PART_AwlButtonTooltipText" Text="{Binding Source={StaticResource ResourceWrapperKey}, Path=AwlButtonTooltipText}" />
+                                                </ToolTip>
+                                            </ToggleButton.ToolTip>
+                                        </ToggleButton>
+
+
+                                        <ToggleButton Name="PART_MaximizeButton" DockPanel.Dock="Right" Focusable="False" 
+                                  VerticalAlignment="Top" Visibility="Collapsed"
+                                  Command="Syncfusion:DockHeaderPresenter.MaximizeStateCommand"
+							Template="{Binding Path=ElementHost.DockingManager.MaximizeButtonTemplate
+								, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Foreground="{StaticResource Office2010Blue.HeaderForeground}"
+				>
+                                            <ToggleButton.ToolTip>
+                                                <ToolTip Name="PART_MaximizeButtonTooltip" >
+                                                    <TextBlock Name="PART_MaximizeButtonTooltipText" Text="{Binding Source={StaticResource ResourceWrapperKey}, Path=MaximizeButtonTooltipText}"/>
+                                                </ToolTip>
+                                            </ToggleButton.ToolTip>
+                                        </ToggleButton>
+                                        <ToggleButton Name="PART_RestoreButton" DockPanel.Dock="Right" Focusable="False" 
+                                  VerticalAlignment="Top" Visibility="Collapsed"
+                                  Command="Syncfusion:DockHeaderPresenter.RestoreStateCommand"
+							Template="{Binding Path=ElementHost.DockingManager.RestoreButtonTemplate
+								, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Foreground="{StaticResource Office2010Blue.HeaderForeground}"
+				>
+                                            <ToggleButton.ToolTip>
+                                                <ToolTip Name="PART_RestoreButtonTooltip" >
+                                                    <TextBlock Name="PART_RestoreButtonTooltipText" />
+                                                </ToolTip>
+                                            </ToggleButton.ToolTip>
+                                        </ToggleButton>
+                                        <ToggleButton Name="PART_MinimizeButton" DockPanel.Dock="Right" Focusable="False" 
+                                  VerticalAlignment="Top" Visibility="Collapsed"
+                                  Command="Syncfusion:DockHeaderPresenter.MinimizeStateCommand"
+							Template="{Binding Path=ElementHost.DockingManager.MinimizeButtonTemplate
+								, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Foreground="{StaticResource Office2010Blue.HeaderForeground}"
+				>
+                                            <ToggleButton.ToolTip>
+                                                <ToolTip Name="PART_MinimizeButtonTooltip" >
+                                                    <TextBlock Name="PART_MinimizeButtonTooltipText" />
+                                                </ToolTip>
+                                            </ToggleButton.ToolTip>
+                                        </ToggleButton>
+                                        <ContentPresenter Name="PART_ContentPresenter" IsHitTestVisible="True" Margin="2" VerticalAlignment="Center"
+								TextBlock.Foreground="{StaticResource Office2010Blue.HeaderForeground}"
+								Content="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.Header)
+									, RelativeSource={RelativeSource TemplatedParent}}"
+								ContentTemplateSelector="{StaticResource DockTrimmingTemplate}"
+								ContentTemplate="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.HeaderTemplate)
+									, RelativeSource={RelativeSource TemplatedParent}}"
+				/>
+                                    </DockPanel>
+                                    <Border Name="CoverletControl" Visibility="Collapsed" Background="Transparent" />
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMaximize)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="false" >
+                                    <Setter Property="Visibility" TargetName="PART_MaximizeButton" Value="Collapsed"/>
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMaximizeMenuItem" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMinimize)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="false" >
+                                    <Setter Property="Visibility" TargetName="PART_MinimizeButton" Value="Collapsed"/>
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMinimizeMenuItem" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=MaximizeButtonEnabled
+								, RelativeSource={RelativeSource FindAncestor
+								, AncestorType={x:Type Syncfusion:DockingManager}}}"
+						Value="False">
+                                    <Setter TargetName="PART_MaximizeButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMaximizeMenuItem" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=MinimizeButtonEnabled
+								, RelativeSource={RelativeSource FindAncestor
+								, AncestorType={x:Type Syncfusion:DockingManager}}}"
+						Value="False">
+                                    <Setter TargetName="PART_MinimizeButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMinimizeMenuItem" Value="False" />
+                                </DataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=MaximizeButtonEnabled
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMaximize)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="false" />
+                                        <Condition Binding="{Binding Path=MaximizeButtonMode
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="Disable" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.MaximizeButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Visible"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_MaximizeButton" Property="Visibility" Value="Visible" />
+                                    <Setter TargetName="PART_MaximizeButton" Property="IsEnabled" Value="False" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=MaximizeButtonEnabled
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMaximize)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="true" />
+                                        <Condition Binding="{Binding Path=MaximizeButtonMode
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="Disable" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.MaximizeButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Visible"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_MaximizeButton" Property="IsEnabled" Value="True" />
+                                </MultiDataTrigger>
+
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=MaximizeButtonEnabled
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMaximize)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.MaximizeButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Visible"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_MaximizeButton" Property="Visibility" Value="Visible" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMaximizeMenuItem" Value="true" />
+                                </MultiDataTrigger>
+
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=MinimizeButtonEnabled
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMinimize)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.MinimizeButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Visible"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_MinimizeButton" Property="Visibility" Value="Visible" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMinimizeMenuItem" Value="true" />
+                                </MultiDataTrigger>
+
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=MaximizeButtonEnabled
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMaximize)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.MaximizeButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Collapsed"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Visibility" TargetName="PART_MaximizeButton" Value="Collapsed"/>
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMaximizeMenuItem" Value="False" />
+                                </MultiDataTrigger>
+
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=MinimizeButtonEnabled
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMinimize)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.MinimizeButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Collapsed"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Visibility" TargetName="PART_MinimizeButton" Value="Collapsed"/>
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMinimizeMenuItem" Value="False" />
+                                </MultiDataTrigger>
+
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.RestoreButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Collapsed" >
+                                    <Setter Property="Visibility" TargetName="PART_RestoreButton" Value="Collapsed"/>
+                                </DataTrigger>
+
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.RestoreButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Visible" >
+                                    <Setter Property="Visibility" TargetName="PART_RestoreButton" Value="Visible"/>
+                                    <Setter Property="Visibility" TargetName="PART_MaximizeButton" Value="Collapsed" />
+                                    <Setter Property="IsEnabled" TargetName="PART_MaximizeButton" Value="True"/>
+                                </DataTrigger>
+
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.State)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Float" >
+                                    <Setter TargetName="PART_AwlButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledAutoHideMenuItem" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.State)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="AutoHidden" >
+                                    <Setter TargetName="PART_AwlButton" Property="RenderTransform" >
+                                        <Setter.Value>
+                                            <RotateTransform Angle="90" CenterX="7.5" CenterY="7.5" />
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanClose)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="False" >
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledHiddenMenuItem" Value="False" />
+                                    <Setter TargetName="PART_CloseButton" Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanFloat)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="False" >
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledFloatingMenuItem" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanDock)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="False" >
+                                    <Setter TargetName="PART_AwlButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledAutoHideMenuItem" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanDocument)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="False" >
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledTabbedMenuItem" Value="False" />
+                                </DataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ShowTabs
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="False" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanClose)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="False"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_CloseButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledHiddenMenuItem" Value="False" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ShowTabs
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.CloseTabs),
+							RelativeSource={RelativeSource TemplatedParent}}"
+							Value="CloseActive" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanClose)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_CloseButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledHiddenMenuItem" Value="False" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ShowTabs
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.CloseTabs),
+							RelativeSource={RelativeSource TemplatedParent}}"
+							Value="CloseAll" />
+                                        <Condition Binding="{Binding Path=CanCloseGroup, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_CloseButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledHiddenMenuItem" Value="False" />
+                                </MultiDataTrigger>
+                                <DataTrigger Binding="{Binding Path=IsKeyboardFocusWithin
+							, RelativeSource={RelativeSource FindAncestor
+							, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+						 Value="True" >
+                                    <Setter TargetName="PART_ContentPresenter" Property="TextBlock.Foreground" Value="{StaticResource Office2010BlueSelectedHeaderForeground}" />
+                                    <Setter TargetName="borderTop" Property="Background" Value="{StaticResource Office2010Blue.SelectedHeaderBackground}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=IsTemplateParenKeyboardFocusWithin
+							, RelativeSource={RelativeSource Self}}"
+						 Value="True" >
+                                    <Setter TargetName="PART_ContentPresenter" Property="TextBlock.Foreground" Value="{StaticResource Office2010BlueSelectedHeaderForeground}" />
+                                    <Setter TargetName="borderTop" Property="Background" Value="{StaticResource Office2010Blue.SelectedHeaderBackground}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=AutoHideVisibility
+								, RelativeSource={RelativeSource FindAncestor
+								, AncestorType={x:Type Syncfusion:DockingManager}}}"
+						Value="False">
+                                    <Setter TargetName="PART_AwlButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledAutoHideMenuItem" Value="False" />
+                                </DataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}"
+						Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.IsDragging),
+							RelativeSource={RelativeSource TemplatedParent}}"
+						Value="True" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="CoverletControl" Property="Visibility" Value="Visible" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ShowTabs
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+							Value="False" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanAutoHide)
+									, RelativeSource={RelativeSource TemplatedParent}}"
+							Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_AwlButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledAutoHideMenuItem" Value="False" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ShowTabs
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanAutoHide)
+									, RelativeSource={RelativeSource TemplatedParent}}"
+							Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_AwlButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledAutoHideMenuItem" Value="False" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ShowTabs
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=AutoHideTabsMode
+								, RelativeSource={RelativeSource AncestorType={x:Type Syncfusion:DockingManager}}}"
+							Value="AutoHideGroup" />
+                                        <Condition Binding="{Binding Path=CanAutoHideGroup, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_AwlButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledHiddenMenuItem" Value="False" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ShowTabs
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="False" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanAutoHide)
+									, RelativeSource={RelativeSource TemplatedParent}}"
+							Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_AwlButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledAutoHideMenuItem" Value="False" />
+                                </MultiDataTrigger>
+                                <Trigger Property="Visibility" Value="Collapsed">
+                                    <Setter TargetName="PART_ContentPresenter" Property="Content" Value="{x:Null}" />
+                                </Trigger>
+                                <Trigger SourceName="borderTop" Property="Visibility" Value="Visible">
+                                    <Setter TargetName="PART_ContentPresenter" Property="TextBlock.Foreground" 
+						Value="{Binding Path=ElementHost.DockingManager.HeaderForeground,
+							RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <Setter TargetName="borderTop" Property="Background" 
+						Value="{Binding Path=ElementHost.DockingManager.HeaderBackground,
+							RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <Setter TargetName="borderTop" Property="BorderBrush" 
+						Value="{Binding Path=ElementHost.DockingManager.HeaderBorderBrush,
+							RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <Setter TargetName="borderTop" Property="BorderThickness" 
+						Value="{Binding Path=ElementHost.DockingManager.HeaderBorderThickness,
+							RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                    <Setter TargetName="PART_AwlButton" Property="Foreground" 
+						Value="{Binding Path=ElementHost.DockingManager.HeaderForeground,
+							RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                    <Setter TargetName="PART_CloseButton" Property="Foreground" 
+						Value="{Binding Path=ElementHost.DockingManager.HeaderForeground,
+							RelativeSource={RelativeSource TemplatedParent}}" />
+                                </Trigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <!--<Condition  Binding="{Binding Path=(utilsOuter:SkinStorage.VisualStyle), RelativeSource={RelativeSource TemplatedParent}}"
+						      Value="Default" />-->
+                                        <Condition Binding="{Binding Path=IsMouseOver
+							       , RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+						    Value="True" />
+                                        <Condition Binding="{Binding Path=ElementHost.DockingManager.IsEnableHotTracking,
+							RelativeSource={RelativeSource TemplatedParent}}"
+						    Value="True" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="borderTop" Property="Background" 
+						Value="{Binding Path=ElementHost.DockingManager.HeaderMouseOverBackground,
+							RelativeSource={RelativeSource TemplatedParent}}" />
+                                </MultiDataTrigger>
+                                <DataTrigger Binding="{Binding Path=IsTemplateParenKeyboardFocusWithin, RelativeSource={RelativeSource Self}}"
+						Value="True">
+                                    <Setter TargetName="PART_ContentPresenter" Property="TextBlock.Foreground" 
+						Value="{Binding Path=ElementHost.DockingManager.HeaderForegroundSelected,
+							RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <Setter TargetName="borderTop" Property="Background" 
+						Value="{Binding Path=ElementHost.DockingManager.SelectedHeaderBackground,
+							RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                    <Setter TargetName="PART_AwlButton" Property="Foreground" 
+						Value="{Binding Path=ElementHost.DockingManager.HeaderForegroundSelected,
+							RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                    <Setter TargetName="PART_CloseButton" Property="Foreground" 
+						Value="{Binding Path=ElementHost.DockingManager.HeaderForegroundSelected,
+							RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                </DataTrigger>
+
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="UseNativeFloatWindow" Value="False">
+                <Setter Property="Template" >
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Syncfusion:DockHeaderPresenter}">
+
+                            <Border  x:Name="borderTop" Width="Auto" Height="Auto"
+				 BorderBrush="{StaticResource Office2010BlueHeaderBorderBrush}"
+				 BorderThickness="1.5"
+                 Background="{StaticResource Office2010Blue.HeaderBackground}"
+				 >
+                                <Border.ContextMenu>
+                                    <Syncfusion:CustomContextMenu Name="PART_ContextMenu"  Focusable="false" />
+                                </Border.ContextMenu>
+                                <Grid>
+                                    <DockPanel LastChildFill="True" >
+                                        <ToggleButton Name="PART_CloseButton" DockPanel.Dock="Right" Focusable="False"
+							Command="Syncfusion:DockHeaderPresenter.CloseCommand"
+							Template="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.CloseButtonTemplate)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+              Foreground="{StaticResource Office2010Blue.HeaderForeground}"
+					>
+                                            <ToggleButton.ToolTip>
+                                                <ToolTip Name="tooltip" >
+                                                    <TextBlock Name="PART_CloseButtonTooltipText" Text="{Binding Source={StaticResource ResourceWrapperKey}, Path=CloseButtonTooltipText}" />
+                                                </ToolTip>
+                                            </ToggleButton.ToolTip>
+                                        </ToggleButton>
+                                        <ToggleButton Name="PART_AwlButton" DockPanel.Dock="Right" Focusable="False"
+                                  VerticalAlignment="Top"
+                                  Command="Syncfusion:DockHeaderPresenter.ChangeAwlStateCommand"
+                                  Template="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.AwlButtonTemplate)
+									, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Foreground="{StaticResource Office2010Blue.AwlKeyImg}"
+				>
+                                            <ToggleButton.ToolTip>
+                                                <ToolTip Name="PART_AwlButtonTooltip">
+                                                    <TextBlock Name="PART_AwlButtonTooltipText" Text="{Binding Source={StaticResource ResourceWrapperKey}, Path=AwlButtonTooltipText}" />
+                                                </ToolTip>
+                                            </ToggleButton.ToolTip>
+                                        </ToggleButton>
+
+
+                                        <ToggleButton Name="PART_MaximizeButton" DockPanel.Dock="Right" Focusable="False" 
+                                  VerticalAlignment="Top" Visibility="Collapsed"
+                                  Command="Syncfusion:DockHeaderPresenter.MaximizeStateCommand"
+							Template="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.MaximizeButtonTemplate)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Foreground="{StaticResource Office2010Blue.HeaderForeground}"
+				>
+                                            <ToggleButton.ToolTip>
+                                                <ToolTip Name="PART_MaximizeButtonTooltip" >
+                                                    <TextBlock Name="PART_MaximizeButtonTooltipText" Text="{Binding Source={StaticResource ResourceWrapperKey}, Path=MaximizeButtonTooltipText}" />
+                                                </ToolTip>
+                                            </ToggleButton.ToolTip>
+                                        </ToggleButton>
+                                        <ToggleButton Name="PART_RestoreButton" DockPanel.Dock="Right" Focusable="False" 
+                                  VerticalAlignment="Top" Visibility="Collapsed"
+                                  Command="Syncfusion:DockHeaderPresenter.RestoreStateCommand"
+							Template="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.RestoreButtonTemplate)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Foreground="{StaticResource Office2010Blue.HeaderForeground}"
+				>
+                                            <ToggleButton.ToolTip>
+                                                <ToolTip Name="PART_RestoreButtonTooltip" >
+                                                    <TextBlock Name="PART_RestoreButtonTooltipText" Text="{Binding Source={StaticResource ResourceWrapperKey}, Path=RestoreButtonTooltipText}" />
+                                                </ToolTip>
+                                            </ToggleButton.ToolTip>
+                                        </ToggleButton>
+                                        <ToggleButton Name="PART_MinimizeButton" DockPanel.Dock="Right" Focusable="False" 
+                                  VerticalAlignment="Top" Visibility="Collapsed"
+                                  Command="Syncfusion:DockHeaderPresenter.MinimizeStateCommand"
+							Template="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.MinimizeButtonTemplate)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+                                  Foreground="{StaticResource Office2010Blue.HeaderForeground}"
+				>
+                                            <ToggleButton.ToolTip>
+                                                <ToolTip Name="PART_MinimizeButtonTooltip" >
+                                                    <TextBlock Name="PART_MinimizeButtonTooltipText" Text="{Binding Source={StaticResource ResourceWrapperKey},Path=MinimizeButtonTooltipText}" />
+                                                </ToolTip>
+                                            </ToggleButton.ToolTip>
+                                        </ToggleButton>
+                                        <ContentPresenter Name="PART_ContentPresenter" IsHitTestVisible="True" Margin="2" VerticalAlignment="Center"
+								TextBlock.Foreground="{StaticResource Office2010Blue.HeaderForeground}"
+								Content="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.Header)
+									, RelativeSource={RelativeSource TemplatedParent}}"
+								ContentTemplateSelector="{StaticResource DockTrimmingTemplate}"
+								ContentTemplate="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.HeaderTemplate)
+									, RelativeSource={RelativeSource TemplatedParent}}"
+				/>
+                                    </DockPanel>
+                                    <Border Name="CoverletControl" Visibility="Collapsed" Background="Transparent" />
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMaximize)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="false" >
+                                    <Setter Property="Visibility" TargetName="PART_MaximizeButton" Value="Collapsed"/>
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMaximizeMenuItem" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMinimize)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="false" >
+                                    <Setter Property="Visibility" TargetName="PART_MinimizeButton" Value="Collapsed"/>
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMinimizeMenuItem" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=MaximizeButtonEnabled
+								, RelativeSource={RelativeSource FindAncestor
+								, AncestorType={x:Type Syncfusion:DockingManager}}}"
+						Value="False">
+                                    <Setter TargetName="PART_MaximizeButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMaximizeMenuItem" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=MinimizeButtonEnabled
+								, RelativeSource={RelativeSource FindAncestor
+								, AncestorType={x:Type Syncfusion:DockingManager}}}"
+						Value="False">
+                                    <Setter TargetName="PART_MinimizeButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMinimizeMenuItem" Value="False" />
+                                </DataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=MaximizeButtonEnabled
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMaximize)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="false" />
+                                        <Condition Binding="{Binding Path=MaximizeButtonMode
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="Disable" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.MaximizeButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Visible"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_MaximizeButton" Property="Visibility" Value="Visible" />
+                                    <Setter TargetName="PART_MaximizeButton" Property="IsEnabled" Value="False" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=MaximizeButtonEnabled
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMaximize)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="true" />
+                                        <Condition Binding="{Binding Path=MaximizeButtonMode
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="Disable" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.MaximizeButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Visible"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_MaximizeButton" Property="IsEnabled" Value="True" />
+                                </MultiDataTrigger>
+
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=MaximizeButtonEnabled
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMaximize)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.MaximizeButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Visible"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_MaximizeButton" Property="Visibility" Value="Visible" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMaximizeMenuItem" Value="true" />
+                                </MultiDataTrigger>
+
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=MinimizeButtonEnabled
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMinimize)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.MinimizeButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Visible"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_MinimizeButton" Property="Visibility" Value="Visible" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMinimizeMenuItem" Value="true" />
+                                </MultiDataTrigger>
+
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=MaximizeButtonEnabled
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMaximize)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.MaximizeButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Collapsed"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Visibility" TargetName="PART_MaximizeButton" Value="Collapsed"/>
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMaximizeMenuItem" Value="False" />
+                                </MultiDataTrigger>
+
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=MinimizeButtonEnabled
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockingManager}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanMinimize)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.MinimizeButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Collapsed"/>
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter Property="Visibility" TargetName="PART_MinimizeButton" Value="Collapsed"/>
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledMinimizeMenuItem" Value="False" />
+                                </MultiDataTrigger>
+
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.RestoreButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Collapsed" >
+                                    <Setter Property="Visibility" TargetName="PART_RestoreButton" Value="Collapsed"/>
+                                </DataTrigger>
+
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.RestoreButtonVisibility)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Visible" >
+                                    <Setter Property="Visibility" TargetName="PART_RestoreButton" Value="Visible"/>
+                                    <Setter Property="Visibility" TargetName="PART_MaximizeButton" Value="Collapsed" />
+                                    <Setter Property="IsEnabled" TargetName="PART_MaximizeButton" Value="True"/>
+                                </DataTrigger>
+
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.State)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="Float" >
+                                    <Setter TargetName="PART_AwlButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledAutoHideMenuItem" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.State)
+								, RelativeSource={RelativeSource TemplatedParent}}"
+							   Value="AutoHidden" >
+                                    <Setter TargetName="PART_AwlButton" Property="RenderTransform" >
+                                        <Setter.Value>
+                                            <RotateTransform Angle="90" CenterX="7.5" CenterY="7.5" />
+                                        </Setter.Value>
+                                    </Setter>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanClose)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="False" >
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledHiddenMenuItem" Value="False" />
+                                    <Setter TargetName="PART_CloseButton" Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanFloat)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="False" >
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledFloatingMenuItem" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanDock)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="False" >
+                                    <Setter TargetName="PART_AwlButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledAutoHideMenuItem" Value="False" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanDocument)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="False" >
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledTabbedMenuItem" Value="False" />
+                                </DataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ShowTabs
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="False" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanClose)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_CloseButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledHiddenMenuItem" Value="False" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ShowTabs
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.CloseTabs),
+							RelativeSource={RelativeSource TemplatedParent}}"
+							Value="CloseActive" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.InternalDataContext).(Syncfusion:DockingManager.CanClose)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_CloseButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledHiddenMenuItem" Value="False" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ShowTabs
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.CloseTabs),
+							RelativeSource={RelativeSource TemplatedParent}}"
+							Value="CloseAll" />
+                                        <Condition Binding="{Binding Path=CanCloseGroup, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_CloseButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledHiddenMenuItem" Value="False" />
+                                </MultiDataTrigger>
+                                <DataTrigger Binding="{Binding Path=IsKeyboardFocusWithin
+							, RelativeSource={RelativeSource FindAncestor
+							, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+						 Value="True" >
+                                    <Setter TargetName="PART_ContentPresenter" Property="TextBlock.Foreground" Value="{StaticResource Office2010BlueSelectedHeaderForeground}" />
+                                    <Setter TargetName="borderTop" Property="Background" Value="{StaticResource Office2010Blue.SelectedHeaderBackground}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=IsTemplateParenKeyboardFocusWithin
+							, RelativeSource={RelativeSource Self}}"
+						 Value="True" >
+                                    <Setter TargetName="PART_ContentPresenter" Property="TextBlock.Foreground" Value="{StaticResource Office2010BlueSelectedHeaderForeground}" />
+                                    <Setter TargetName="borderTop" Property="Background" Value="{StaticResource Office2010Blue.SelectedHeaderBackground}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Path=AutoHideVisibility
+								, RelativeSource={RelativeSource FindAncestor
+								, AncestorType={x:Type Syncfusion:DockingManager}}}"
+						Value="False">
+                                    <Setter TargetName="PART_AwlButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledAutoHideMenuItem" Value="False" />
+                                </DataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=IsMouseOver, RelativeSource={RelativeSource Self}}"
+						Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.IsDragging),
+							RelativeSource={RelativeSource TemplatedParent}}"
+						Value="True" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="CoverletControl" Property="Visibility" Value="Visible" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ShowTabs
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+							Value="False" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.CanAutoHide)
+									, RelativeSource={RelativeSource TemplatedParent}}"
+							Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_AwlButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledAutoHideMenuItem" Value="False" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ShowTabs
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding  Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.CanAutoHide)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_AwlButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledAutoHideMenuItem" Value="False" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ShowTabs
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="True" />
+                                        <Condition Binding="{Binding Path=AutoHideTabsMode
+								, RelativeSource={RelativeSource AncestorType={x:Type Syncfusion:DockingManager}}}"
+							Value="AutoHideGroup" />
+                                        <Condition Binding="{Binding Path=CanAutoHideGroup, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_AwlButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledHiddenMenuItem" Value="False" />
+                                </MultiDataTrigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <Condition Binding="{Binding Path=ShowTabs
+									, RelativeSource={RelativeSource FindAncestor
+									, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+								Value="False" />
+                                        <Condition Binding="{Binding  Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.CanAutoHide)
+									, RelativeSource={RelativeSource TemplatedParent}}" Value="False" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="PART_AwlButton" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="PART_ContextMenu" Property="IsEnabledAutoHideMenuItem" Value="False" />
+                                </MultiDataTrigger>
+                                <Trigger Property="Visibility" Value="Collapsed">
+                                    <Setter TargetName="PART_ContentPresenter" Property="Content" Value="{x:Null}" />
+                                </Trigger>
+                                <Trigger SourceName="borderTop" Property="Visibility" Value="Visible">
+                                    <Setter TargetName="PART_ContentPresenter" Property="TextBlock.Foreground" 
+						Value="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.HeaderForeground),
+							RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <Setter TargetName="borderTop" Property="Background" 
+						Value="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.HeaderBackground),
+							RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <Setter TargetName="borderTop" Property="BorderBrush" 
+						Value="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.HeaderBorderBrush),
+							RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <Setter TargetName="borderTop" Property="BorderThickness" 
+						Value="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.HeaderBorderThickness),
+							RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                    <Setter TargetName="PART_AwlButton" Property="Foreground" 
+						Value="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.HeaderForeground),
+							RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                    <Setter TargetName="PART_CloseButton" Property="Foreground" 
+						Value="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.HeaderForeground),
+							RelativeSource={RelativeSource TemplatedParent}}" />
+                                </Trigger>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                        <!--<Condition  Binding="{Binding Path=(utilsOuter:SkinStorage.VisualStyle), RelativeSource={RelativeSource TemplatedParent}}"
+						      Value="Default" />-->
+                                        <Condition Binding="{Binding Path=IsMouseOver
+							       , RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Syncfusion:DockedElementTabbedHost}}}"
+						    Value="True" />
+                                        <Condition Binding="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.IsEnableHotTracking),
+							RelativeSource={RelativeSource TemplatedParent}}"
+						    Value="True" />
+                                    </MultiDataTrigger.Conditions>
+                                    <Setter TargetName="borderTop" Property="Background" 
+						Value="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.HeaderMouseOverBackground),
+							RelativeSource={RelativeSource TemplatedParent}}" />
+                                </MultiDataTrigger>
+                                <DataTrigger Binding="{Binding Path=IsTemplateParenKeyboardFocusWithin, RelativeSource={RelativeSource Self}}"
+						Value="True">
+                                    <Setter TargetName="PART_ContentPresenter" Property="TextBlock.Foreground" 
+						Value="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.HeaderForegroundSelected),
+							RelativeSource={RelativeSource TemplatedParent}}" />
+                                    <Setter TargetName="borderTop" Property="Background" 
+						Value="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.SelectedHeaderBackground),
+							RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                    <Setter TargetName="PART_AwlButton" Property="Foreground" 
+						Value="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.HeaderForegroundSelected),
+							RelativeSource={RelativeSource TemplatedParent}}" />
+
+                                    <Setter TargetName="PART_CloseButton" Property="Foreground" 
+						Value="{Binding Path=(Syncfusion:DockingManager.DockingManager).(Syncfusion:DockingManager.HeaderForegroundSelected),
+							RelativeSource={RelativeSource TemplatedParent}}" />
+                                </DataTrigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

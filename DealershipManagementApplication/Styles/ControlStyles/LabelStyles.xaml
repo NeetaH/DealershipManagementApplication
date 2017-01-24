@@ -1,0 +1,84 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="Totalrecords" TargetType="{x:Type Label}">
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="#FF333333"/>
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="5" />
+    </Style>
+
+    <!-- Text Label -->
+    <Style TargetType="{x:Type Label}">
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Foreground" Value="#FF404040"/>
+        <Setter Property="Height" Value="24" />
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="bottom"/>
+    </Style>
+
+    <Style TargetType="{x:Type Label}" x:Key="LB">
+        <Setter Property="Foreground" Value="#FF333333"/>
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Height" Value="24" />
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="bottom"/>
+    </Style>
+
+    <!--Mandatory-->
+    <Style x:Key="mandatory" TargetType="{x:Type Label}">
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="Foreground" Value="Red"/>
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="Width" Value="18" />
+        <Setter Property="Content" Value="*" />
+    </Style>
+
+    <Style x:Key="multiplicationsymbol" TargetType="{x:Type Label}">
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Width" Value="18" />
+        <Setter Property="Content" Value="x" />
+    </Style>
+
+    <Style x:Key="percentage" TargetType="{x:Type Label}">
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Width" Value="18" />
+        <Setter Property="Content" Value="%" />
+    </Style>
+
+    <Style x:Key="btntext" TargetType="{x:Type Label}">
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Foreground" Value="#FF1a5700"/>
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="Padding" Value="3" />
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+
+
+    </Style>
+
+
+</ResourceDictionary>

@@ -1,0 +1,148 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+                    xmlns:mdi="clr-namespace:DealershipManagementApplication"
+                    xmlns:properties="clr-namespace:DealershipManagementApplication.HelperClasses"
+                    xmlns:sdk="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
+                    xmlns:Data="clr-namespace:System.Windows.Controls.Primitives;assembly=PresentationFramework"
+                    xmlns:gif="clr-namespace:WpfAnimatedGif;assembly=WpfAnimatedGif"
+                    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DealershipManagementApplication;component/Styles/Dictionary3.xaml"/>    
+        <ResourceDictionary Source="/DealershipManagementApplication;component/Styles/ControlStyles/ButtonStyles.xaml"/>
+        <ResourceDictionary Source="/DealershipManagementApplication;component/Styles/ControlStyles/ComboboxStyles.xaml"/>
+        <ResourceDictionary Source="/DealershipManagementApplication;component/Styles/ControlStyles/DatagridStyles.xaml"/>
+        <ResourceDictionary Source="/DealershipManagementApplication;component/Styles/ControlStyles/LabelStyles.xaml"/>
+        <ResourceDictionary Source="/DealershipManagementApplication;component/Styles/ControlStyles/TextboxStyles.xaml"/>
+        <!--<ResourceDictionary Source="/DealershipManagementApplication;component/Styles/ControlStyles/DatepickerStyles.xaml"/>-->
+        <!--<ResourceDictionary Source="/DealershipManagementApplication;component/Styles/ControlStyles/ExpanderStyles.xaml"/>-->
+        <ResourceDictionary Source="/DealershipManagementApplication;component/Styles/ControlStyles/GridStyles.xaml"/>
+        <!--<ResourceDictionary Source="/DealershipManagementApplication;component/Styles/ControlStyles/GroupboxStyles.xaml"/>
+        <ResourceDictionary Source="/DealershipManagementApplication;component/Styles/ControlStyles/HyperlinkStyles.xaml"/>
+        
+        <ResourceDictionary Source="/DealershipManagementApplication;component/Styles/ControlStyles/PasswordStyles.xaml"/>
+        <ResourceDictionary Source="/DealershipManagementApplication;component/Styles/ControlStyles/RadiobuttonStyles.xaml"/>
+        
+        <ResourceDictionary Source="/DealershipManagementApplication;component/Styles/ControlStyles/TreeViewStyles.xaml"/>
+        <ResourceDictionary Source="/DealershipManagementApplication;component/Styles/ControlStyles/WindowStyles.xaml"/>-->
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--CheckBox-->
+    <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}">
+        <Setter Property="Background" Value="#ffffff" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="BorderBrush" Value="#bab9b9" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="HorizontalAlignment" Value="left"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="Foreground" Value="#FF333333"/>
+        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="1.2" />
+    </Style>
+
+    <!--Listbox-->
+    <Style TargetType="{x:Type ListBox}">
+        <Setter Property="Background" >
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFffffff" Offset="0" />
+                    <GradientStop Color="#FFffffff" Offset="0.829" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush" Value="#bab9b9" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="11" />
+
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Width" Value="125" />
+        <Setter Property="HorizontalAlignment" Value="left"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Foreground" Value="#FF333333"/>
+        <Setter Property="BorderBrush" Value="#bab9b9" />
+        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="1.2" />
+    </Style>
+
+
+    <Style TargetType="{x:Type syncfusion:CheckListBox}">
+        <Setter Property="Background" >
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFffffff" Offset="0" />
+                    <GradientStop Color="#FFffffff" Offset="0.829" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush" Value="#bab9b9" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Width" Value="125" />
+        <Setter Property="HorizontalAlignment" Value="left"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Foreground" Value="#FF333333"/>
+        <Setter Property="BorderBrush" Value="#bab9b9" />
+        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="1.2" />
+    </Style>
+
+    <!-- Syncfustion DateTimeEdit -->
+    <Style TargetType="{x:Type syncfusion:DateTimeEdit}">
+        <Setter Property="BorderBrush" Value="#bab9b9" />
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="Foreground" Value="#FF333333"/>
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="Height" Value="19" />
+        <Setter Property="Width" Value="130" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}" />
+        <Setter Property="BorderThickness" Value="1.2" />
+        <Setter Property="Background" >
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFffffff" Offset="0" />
+                    <GradientStop Color="#FFffffff" Offset="0.829" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style TargetType="UserControl">
+        <Setter Property="Background" Value="#FFffffff" />
+    </Style>
+
+    <!--<properties:RGColorConverter x:Key="LabelColor"/>
+    <properties:GridRowForeGroundColorConverter x:Key="GridRowColor"/>-->
+
+    <!--<Style x:Key="BusyIndicator" TargetType="xctk:BusyIndicator">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="xctk:BusyIndicator">
+                    <Grid>
+                        <Image  x:Name="img" gif:ImageBehavior.AnimatedSource="/DealershipManagementApplication;component/Images/Phoenix.gif" Width="25" Height="25" />
+                        --><!--<Popup x:Name="lblbusyIndicator"  Height="700" Width="1500"></Popup>--><!--
+                        <Label x:Name="lblbusyIndicator" Background="Transparent" Height="700" Width="1500"></Label>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsBusy" Value="False">
+                            <Setter TargetName="img" Property="Visibility" Value="Hidden" />
+                            <Setter TargetName="lblbusyIndicator" Property="Visibility" Value="Hidden" />
+                        </Trigger>
+
+                        <Trigger Property="IsBusy" Value="True">
+                            <Setter TargetName="img" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="lblbusyIndicator" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+</ResourceDictionary>
