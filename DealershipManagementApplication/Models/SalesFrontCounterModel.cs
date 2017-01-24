@@ -189,6 +189,7 @@ namespace DealershipManagementApplication.Models
     
     public class SalesFrontPaymentInformation
     {
+
         private int _DepartmentID;
         public int DepartmentID
         {
