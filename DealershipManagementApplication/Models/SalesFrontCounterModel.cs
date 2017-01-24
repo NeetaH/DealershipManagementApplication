@@ -183,8 +183,58 @@ namespace DealershipManagementApplication.Models
             get { return _AmountSubmitted; }
             set { _AmountSubmitted = value; }
         }
-
     }
+
+    #region Header Fields
+    public class HeaderDetails
+    {
+        private string _InvoiceNumber;
+        public string InvoiceNumber
+        {
+            get { return _InvoiceNumber; }
+            set { _InvoiceNumber = value; }
+        }
+
+        private string _Status;
+        public string Status
+        {
+            get { return _Status; }
+            set { _Status = value; }
+        }
+
+        private string _Estimate;
+        public string Estimate
+        {
+            get { return _Estimate; }
+            set { _Estimate = value; }
+        }
+
+        private string _JournalEntry;
+        public string JournalEntry
+        {
+            get { return _JournalEntry; }
+            set { _JournalEntry = value; }
+        }
+
+        private int _CreatedBy;
+        public int CreatedBy
+        {
+            get { return _CreatedBy; }
+            set
+            {
+                _CreatedBy = value;
+            }
+        }
+
+        private int _PostedBy;
+        public int PostedBy
+        {
+            get { return _PostedBy; }
+            set { _PostedBy = value; }
+        }
+    }
+  
+    
 
     public class SalesFrontPaymentInformation
     {
@@ -265,5 +315,4 @@ namespace DealershipManagementApplication.Models
             set { _ShipingMethod = value; }
         }
     }
-
 }
