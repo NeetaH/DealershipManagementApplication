@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\DealershipManagementApplication\DealershipManagementApplication\App.xaml
-21319837348
+101388538720
 
-8-540352972
-12-1401562060
-MainWindow.xaml;Views\SalesFrontCounter.xaml;
+12-1848213311
+29-1546940182
+MainWindow.xaml;Styles\ControlStyles\ButtonStyles.xaml;Styles\ControlStyles\ComboBoxStyles.xaml;Styles\ControlStyles\DatagridStyles.xaml;Styles\ControlStyles\TextBoxStyles.xaml;Styles\Dictionary3.xaml;Styles\ControlStyles\GridStyles.xaml;Styles\ControlStyles\LabelStyles.xaml;Styles\SilverGreen.xaml;Views\SalesFrontCounter.xaml;
 
 False
 

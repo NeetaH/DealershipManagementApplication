@@ -45,6 +45,8 @@ namespace DealershipManagementApplication.Models
         #endregion
     }
 
+    #region "Customer-Internal Billing Information"
+
     public class InternalPay
     {
         private decimal _NetReceivingAmount;
@@ -185,6 +187,8 @@ namespace DealershipManagementApplication.Models
         }
     }
 
+    #endregion
+
     #region Header Fields
     public class HeaderDetails
     {
@@ -233,9 +237,9 @@ namespace DealershipManagementApplication.Models
             set { _PostedBy = value; }
         }
     }
-  
-    
 
+
+    #endregion
     public class SalesFrontPaymentInformation
     {
         private int _DepartmentID;
@@ -316,3 +320,4 @@ namespace DealershipManagementApplication.Models
         }
     }
 }
+
