@@ -36,71 +36,71 @@
   <ItemGroup>
     <Reference Include="Syncfusion.Chart.Base, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.Chart.Base.dll</HintPath>
+      <HintPath>Output\Syncfusion.Chart.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Chart.WPF, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.Chart.WPF.dll</HintPath>
+      <HintPath>Output\Syncfusion.Chart.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Chart.WPF.SampleLayout, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.Chart.WPF.SampleLayout.dll</HintPath>
+      <HintPath>Output\Syncfusion.Chart.WPF.SampleLayout.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Core, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.Core.dll</HintPath>
+      <HintPath>Output\Syncfusion.Core.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Diagram.WPF, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.Diagram.WPF.dll</HintPath>
+      <HintPath>Output\Syncfusion.Diagram.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Gauge.WPF, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.Gauge.WPF.dll</HintPath>
+      <HintPath>Output\Syncfusion.Gauge.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Grid.WPF, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.Grid.WPF.dll</HintPath>
+      <HintPath>Output\Syncfusion.Grid.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.GridCommon.WPF, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.GridCommon.WPF.dll</HintPath>
+      <HintPath>Output\Syncfusion.GridCommon.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Linq.Base, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.Linq.Base.dll</HintPath>
+      <HintPath>Output\Syncfusion.Linq.Base.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.PropertyGrid.WPF, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.PropertyGrid.WPF.dll</HintPath>
+      <HintPath>Output\Syncfusion.PropertyGrid.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.ReportControls.WPF, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.ReportControls.WPF.dll</HintPath>
+      <HintPath>Output\Syncfusion.ReportControls.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.RichTextBoxAdv.WPF, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.RichTextBoxAdv.WPF.dll</HintPath>
+      <HintPath>Output\Syncfusion.RichTextBoxAdv.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SampleLayout, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.SampleLayout.dll</HintPath>
+      <HintPath>Output\Syncfusion.SampleLayout.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.SampleLayout.WPF, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.SampleLayout.WPF.dll</HintPath>
+      <HintPath>Output\Syncfusion.SampleLayout.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Shared.MVVM.WPF, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.Shared.MVVM.WPF.dll</HintPath>
+      <HintPath>Output\Syncfusion.Shared.MVVM.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Shared.WPF, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.Shared.WPF.dll</HintPath>
+      <HintPath>Output\Syncfusion.Shared.WPF.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Tools.WPF, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Output\Syncfusion.Tools.WPF.dll</HintPath>
+      <HintPath>Output\Syncfusion.Tools.WPF.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
