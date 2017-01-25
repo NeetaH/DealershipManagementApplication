@@ -5,7 +5,7 @@
                     xmlns:properties="clr-namespace:DealershipManagementApplication.HelperClasses"
                     xmlns:sdk="clr-namespace:System.Windows.Controls;assembly=PresentationFramework"
                     xmlns:Data="clr-namespace:System.Windows.Controls.Primitives;assembly=PresentationFramework"
-                    xmlns:gif="clr-namespace:WpfAnimatedGif;assembly=WpfAnimatedGif"
+                    
                     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
 
     <ResourceDictionary.MergedDictionaries>

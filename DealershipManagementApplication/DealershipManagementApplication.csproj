@@ -104,6 +104,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -125,6 +126,7 @@
     <Compile Include="HelperClasses\AdvanceTrackerForTabControl.cs" />
     <Compile Include="HelperClasses\FilteredComboBox.cs" />
     <Compile Include="HelperClasses\PropertyWatcher1.cs" />
+    <Compile Include="ViewModels\DependingClass.cs" />
     <Compile Include="ViewModels\SalesFrontCounterViewModel.cs" />
     <Compile Include="Views\SalesFrontCounter.xaml.cs">
       <DependentUpon>SalesFrontCounter.xaml</DependentUpon>
@@ -206,7 +208,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\search_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
