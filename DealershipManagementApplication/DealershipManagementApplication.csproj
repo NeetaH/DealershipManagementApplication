@@ -34,6 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MockData">
+      <HintPath>Output\MockData.dll</HintPath>
+    </Reference>
     <Reference Include="Syncfusion.Chart.Base, Version=14.4450.0.15, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Output\Syncfusion.Chart.Base.dll</HintPath>
@@ -121,10 +127,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\DataProxy.cs" />
     <Compile Include="HelperClasses\AddOnExtension.cs" />
     <Compile Include="HelperClasses\AdvanceTrackerForTabControl.cs" />
     <Compile Include="HelperClasses\FilteredComboBox.cs" />
     <Compile Include="HelperClasses\PropertyWatcher1.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\CustomerLocationModel.cs" />
+    <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Data\DataFactory.cs" />
+    <Compile Include="Models\DepartmentModel.cs" />
+    <Compile Include="Models\EmployeeModel.cs" />
+    <Compile Include="Models\LocationModel.cs" />
+    <Compile Include="Models\OwnerModel.cs" />
+    <Compile Include="Models\PaymentMethodModel.cs" />
+    <Compile Include="Models\SalesTypeModel.cs" />
+    <Compile Include="Models\ShippingMethodsModel.cs" />
+    <Compile Include="Models\StocksModel.cs" />
     <Compile Include="ViewModels\SalesFrontCounterViewModel.cs" />
     <Compile Include="Views\SalesFrontCounter.xaml.cs">
       <DependentUpon>SalesFrontCounter.xaml</DependentUpon>
@@ -197,6 +216,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
