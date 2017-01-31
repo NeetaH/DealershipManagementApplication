@@ -7,16 +7,23 @@ using System.Threading.Tasks;
 
 namespace DealershipManagementApplication.Models
 {
-    public class SalesFrontCounterModel : INotifyPropertyChanged
+    public class SalesFrontCounterModel : BaseModel, INotifyPropertyChanged
     {
         public SalesFrontCounterModel()
         {
             PaymentInformation = new SalesFrontPaymentInformation();
         }
 
-        public List<InternalPay> InternalPayDetails { get; set; }
-        public List<CustomerPay> CustomerPayDetails { get; set; }
-        public List<InternalPay> WarrantyPayDetails { get; set; }
+        private HeaderDetails _HeaderDetails;
+        public HeaderDetails HeaderDetails
+        {
+            get { return _HeaderDetails; }
+            set { _HeaderDetails = value; }
+        }
+
+        public InternalPay InternalPayDetails { get; set; }
+        public CustomerPay CustomerPayDetails { get; set; }
+        public InternalPay WarrantyPayDetails { get; set; }
 
         private SalesFrontPaymentInformation _PaymentInformation;
         public SalesFrontPaymentInformation PaymentInformation
@@ -122,8 +129,8 @@ namespace DealershipManagementApplication.Models
             set { _PaymentAmount = value; }
         }
 
-        private decimal _PaymentMethod;
-        public decimal PaymentMethod
+        private int _PaymentMethod;
+        public int PaymentMethod
         {
             get { return _PaymentMethod; }
             set { _PaymentMethod = value; }
@@ -249,8 +256,8 @@ namespace DealershipManagementApplication.Models
             set { _DepartmentID = value; }
         }
 
-        private string _SellingLocation;
-        public string SellingLocation
+        private int _SellingLocation;
+        public int SellingLocation
         {
             get { return _SellingLocation; }
             set { _SellingLocation = value; }
