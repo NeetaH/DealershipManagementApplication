@@ -1,23 +1,19 @@
-﻿using System;
+﻿using DealershipManagementApplication.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using DMS.AppCommon;
+using System.Data;
+using System.Reflection.Emit;
 
 namespace DealershipManagementApplication.Models
-{
-    public class SalesFrontCounterModel : INotifyPropertyChanged
+{   
+    public class SalesFrontCounterModel : BaseViewModel
     {
-        public SalesFrontCounterModel()
-        {
-            PaymentInformation = new SalesFrontPaymentInformation();
-        }
-
-        public List<InternalPay> InternalPayDetails { get; set; }
-        public List<CustomerPay> CustomerPayDetails { get; set; }
-        public List<InternalPay> WarrantyPayDetails { get; set; }
-
         private SalesFrontPaymentInformation _PaymentInformation;
         public SalesFrontPaymentInformation PaymentInformation
         {
@@ -25,27 +21,40 @@ namespace DealershipManagementApplication.Models
             set { _PaymentInformation = value; }
         }
 
-        #region INotifyPropertyChanged
-        new public event PropertyChangedEventHandler PropertyChanged;
-
-        new public void OnPropertyChanged(string propertyName)
+        private InternalPay _InternalPay;
+        public InternalPay InternalPay
         {
-            try
-            {
-                var handler = PropertyChanged;
-                if (handler != null)
-                {
-                    var e = new PropertyChangedEventArgs(propertyName);
-                    handler(this, e);
-                }
-            }
-            catch
-            { }
+            get { return _InternalPay; }
+            set { _InternalPay = value; }
         }
-        #endregion
+
+        private CustomerPay _CustomerPay;
+        public CustomerPay CustomerPay
+        {
+            get { return _CustomerPay; }
+            set { _CustomerPay = value; }
+        }
+
+        private HeaderDetails _headerDetails;
+        public HeaderDetails HeaderDetails
+        {
+            get { return _headerDetails; }
+            set { _headerDetails = value; }
+        }
+    
+        public SalesFrontCounterModel()
+        {
+            PaymentInformation = new SalesFrontPaymentInformation();
+            HeaderDetails = new HeaderDetails();
+            InternalPay = new InternalPay();
+            CustomerPay = new CustomerPay();
+        }           
+        
     }
 
-    #region "Customer-Internal Billing Information"
+
+
+    #region "Customer-InternalBillingInformation"
 
     public class InternalPay
     {
@@ -190,34 +199,34 @@ namespace DealershipManagementApplication.Models
     #endregion
 
     #region Header Fields
-    public class HeaderDetails
+    public class HeaderDetails :BaseViewModel
     {
-        private string _InvoiceNumber;
-        public string InvoiceNumber
+        private string _SalesFrontCntNo;
+        public string SalesFrontCntNo
         {
-            get { return _InvoiceNumber; }
-            set { _InvoiceNumber = value; }
+            get { return _SalesFrontCntNo; }
+            set { _SalesFrontCntNo = value; }
         }
 
-        private string _Status;
-        public string Status
+        private string _DocumentStatus;
+        public string DocumentStatus
         {
-            get { return _Status; }
-            set { _Status = value; }
+            get { return _DocumentStatus; }
+            set { _DocumentStatus = value; }
         }
 
-        private string _Estimate;
-        public string Estimate
+        private string _EstimationNo;
+        public string EstimationNo
         {
-            get { return _Estimate; }
-            set { _Estimate = value; }
+            get { return _EstimationNo; }
+            set { _EstimationNo = value; }
         }
 
-        private string _JournalEntry;
-        public string JournalEntry
+        private string _JournalEntryNo;
+        public string JournalEntryNo
         {
-            get { return _JournalEntry; }
-            set { _JournalEntry = value; }
+            get { return _JournalEntryNo; }
+            set { _JournalEntryNo = value; }
         }
 
         private int _CreatedBy;
@@ -236,19 +245,64 @@ namespace DealershipManagementApplication.Models
             get { return _PostedBy; }
             set { _PostedBy = value; }
         }
-    }
 
-
-    #endregion
-    public class SalesFrontPaymentInformation
-    {
-        private int _DepartmentID;
-        public int DepartmentID
+        private string _OwnerToCustNo;
+        public string OwnerToCustNo
         {
-            get { return _DepartmentID; }
-            set { _DepartmentID = value; }
+            get
+            {
+                return _OwnerToCustNo;
+            }
+            set
+            {
+                if (_OwnerToCustNo != value)
+                {
+                    _OwnerToCustNo = value;
+                    OnPropertyChanged("OwnerToCustNo");
+                }
+            }
         }
 
+        private string _ShipToCustNo;
+        public string ShipToCustNo
+        {
+            get
+            {
+                return _ShipToCustNo;
+            }
+            set
+            {
+                if (_ShipToCustNo != value)
+                {
+                    _ShipToCustNo = value;
+                    OnPropertyChanged("ShipToCustNo");
+                }
+            }
+        }
+
+        private string _BillToCustNo;
+        public string BillToCustNo
+        {
+            get
+            {
+                return _BillToCustNo;
+            }
+            set
+            {
+                if (_BillToCustNo != value)
+                {
+                    _BillToCustNo = value;
+                    OnPropertyChanged("BillToCustNo");                    
+                }
+            }
+        }
+    }
+    #endregion
+
+    #region "PaymentInformation"
+    public class SalesFrontPaymentInformation :BaseViewModel
+    {
+                        
         private string _SellingLocation;
         public string SellingLocation
         {
@@ -263,6 +317,7 @@ namespace DealershipManagementApplication.Models
             set { _SalesTypeID = value; }
         }
 
+     
         private int _StockID;
         public int StockID
         {
@@ -317,6 +372,84 @@ namespace DealershipManagementApplication.Models
         {
             get { return _ShipingMethod; }
             set { _ShipingMethod = value; }
+        }
+    }
+  
+    #endregion
+
+    public class Department
+    {
+        public Int64 DepartmentID { get; set; }
+        public string DepartmentNo { get; set; }
+        public int DepartmentTypeID { get; set; }
+        public string Active { get; set; }
+        public string DepartmentName { get; set; }
+
+        public List<Department> getDepartmentNO()
+            {                
+                try
+                {
+                    
+                    List<Department> returnDepartmentNO = new List<Department>();
+                  
+                            returnDepartmentNO.Add(new Department() { 
+                                                            DepartmentTypeID = 1, 
+                                                            DepartmentID = 101101,
+                                                            DepartmentName = "PARTS",
+                                                            DepartmentNo = "0101", Active = "Yes" });                                    
+                    return returnDepartmentNO ;                
+                }
+                catch (Exception ex)
+                {                    
+                    return null;
+                }
+            }
+
+       //public List<Department> getDepartmentName()
+       //     {             
+       //         try
+       //         {
+       //             List<Department> returnDescription = new List<Department>();                   
+       //              returnDescription.Add(new Department() {
+       //                  DepartmentTypeID =1, 
+       //                  DepartmentID = 101101,
+       //                  DepartmentName = "PARTS", 
+       //                  Active = "Yes" });
+                                 
+       //             return returnDescription;//.Where(x => x.Active == "YES" || x.DepartmentID == DepartmentID).ToList(); 
+       //         }
+       //         catch (Exception ex)
+       //         {                  
+       //             return null;
+       //         }
+       //     }
+
+     }
+
+    public class CompanyLocation
+    {
+        public int LocationID { get; set; }
+        public string LocationCode { get; set; }
+        public string LocationName { get; set; }
+        public string Active { get; set; }
+
+        public List<CompanyLocation> GetCompanyLocationList(int LocationID = 0)
+        {            
+            try
+            {                
+                List<CompanyLocation> returnCompanyLocationList = new List<CompanyLocation>();               
+                   returnCompanyLocationList.Add(new CompanyLocation() { 
+                       LocationID = 1, 
+                       LocationCode = "001", 
+                       LocationName = "HFI-MainWarehouse",
+                       Active = "Yes"});                
+
+                return returnCompanyLocationList;              
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
     }
 }
