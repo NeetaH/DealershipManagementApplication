@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DealershipManagementApplication.ViewModels;
+using DealershipManagementApplication.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,17 @@ namespace DealershipManagementApplication
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MDI mdi = new MDI();
+            SalesFrontCounter salesFront = new SalesFrontCounter();
+            (salesFront.DataContext as SalesFrontCounterViewModel).ChangeState();
+            mdi.SetActiveDocument(salesFront);
+            mdi.ShowDialog();
+
+
         }
     }
 }

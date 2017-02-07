@@ -132,6 +132,10 @@
     <Compile Include="HelperClasses\AdvanceTrackerForTabControl.cs" />
     <Compile Include="HelperClasses\FilteredComboBox.cs" />
     <Compile Include="HelperClasses\PropertyWatcher1.cs" />
+    <Compile Include="Helpers\RelayCommandHelper.cs" />
+    <Compile Include="MDI.xaml.cs">
+      <DependentUpon>MDI.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\CustomerLocationModel.cs" />
     <Compile Include="Models\CustomerModel.cs" />
@@ -144,6 +148,7 @@
     <Compile Include="Models\SalesTypeModel.cs" />
     <Compile Include="Models\ShippingMethodsModel.cs" />
     <Compile Include="Models\StocksModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\SalesFrontCounterViewModel.cs" />
     <Compile Include="Views\SalesFrontCounter.xaml.cs">
       <DependentUpon>SalesFrontCounter.xaml</DependentUpon>
@@ -160,6 +165,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MDI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Styles\ControlStyles\ButtonStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

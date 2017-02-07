@@ -1246,8 +1246,7 @@
 
 
                                     <!--Parts Kit Inventory-->
-                                    <!--
-                                    <Expander   Header="Parts Kit Inventory Information" IsExpanded="True" Height="Auto" Name="expKitInvInfo" TabIndex="1" HorizontalAlignment="Stretch" ExpandDirection="Down"
+                                    <!--<Expander   Header="Parts Kit Inventory Information" IsExpanded="True" Height="Auto" Name="expKitInvInfo" TabIndex="1" HorizontalAlignment="Stretch" ExpandDirection="Down"
                                                     VerticalAlignment="Stretch" Margin="0"  Grid.Row="1" BorderBrush="{x:Null}">
                                         <properties:AdvanceTrackerForTabControl x:Name="trkPartsKitInventoryInformation" HorizontalContentAlignment="Stretch">
                                             <Grid HorizontalAlignment="Stretch" Name="grid51" VerticalAlignment="Stretch" Grid.Row="1" Style="{StaticResource silvergreengrid}">
@@ -1271,20 +1270,20 @@
                                                     </Grid.RowDefinitions>
                                                     <Label Content="Kit (# / Desc.)  : " FontFamily="Arial" FontSize="11" Grid.Row="1" HorizontalAlignment="Right" HorizontalContentAlignment="Right" Name="label3K" VerticalAlignment="Top" />
                                                     <Label Grid.Row="1" HorizontalAlignment="Right" Margin="0,3,0,0" Style="{StaticResource mandatory}" Visibility="Collapsed" />
-                                                    <TextBox CharacterCasing="Upper" Grid.Row="1" Height="20" HorizontalAlignment="Left" MaxLength="15" 
-                                             LostFocus="txtPartKitNo_LostFocus"
-                                             KeyDown="txtPartKitNo_KeyDown" properties:AdvanceTrackerForTabControl.Property="Text"
+                                                    <TextBox CharacterCasing="Upper" Grid.Row="1" Height="20" HorizontalAlignment="Left" MaxLength="15" properties:AdvanceTrackerForTabControl.Property="Text"
                                              Name="txtPartKitNo" TabIndex="71" Behaviors:TextBoxMaskBehavior.Mask="AlphaNumeric" VerticalAlignment="Center" Width="142" Grid.Column="1">
+                                                        --><!--LostFocus="txtPartKitNo_LostFocus"
+                                             KeyDown="txtPartKitNo_KeyDown"--><!--
                                                         <Binding Mode="TwoWay" Path="PartsKitNo" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True" ValidatesOnExceptions="True">
                                                             <Binding.ValidationRules>
                                                                 <Behaviors:RequiredFieldValidation />
                                                             </Binding.ValidationRules>
                                                         </Binding>
                                                     </TextBox>
-                                                    <TextBox CharacterCasing="Upper" Grid.Column="3" Grid.Row="1" Height="20" HorizontalAlignment="Left" 
-                                             LostFocus="txtPartKitNo_LostFocus"
-                                             KeyDown="txtPartKitNo_KeyDown" properties:AdvanceTrackerForTabControl.Property="Text"
+                                                    <TextBox CharacterCasing="Upper" Grid.Column="3" Grid.Row="1" Height="20" HorizontalAlignment="Left" properties:AdvanceTrackerForTabControl.Property="Text"
                                              MaxLength="100" Name="txtPartKitDesc" TabIndex="73" Behaviors:TextBoxMaskBehavior.Mask="AlphaNumeric" VerticalAlignment="Center" Width="245">
+                                                        --><!--LostFocus="txtPartKitNo_LostFocus"
+                                             KeyDown="txtPartKitNo_KeyDown"--><!--
                                                         <Binding Mode="TwoWay" Path="PartsKitName" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True" ValidatesOnExceptions="True">
                                                             <Binding.ValidationRules>
                                                                 <Behaviors:RequiredFieldValidation />
@@ -1292,13 +1291,13 @@
                                                         </Binding>
                                                     </TextBox>
                                                     <Button BorderBrush="Black" ClipToBounds="False" Foreground="White" Grid.Column="1" Grid.Row="1" 
-                                            Click="btnPartKitNo_Click"
                                             HorizontalAlignment="Right" Name="btnPartKitNo" Style="{StaticResource NewType}" TabIndex="72" VerticalAlignment="Center" Width="23">
+                                                        --><!--Click="btnPartKitNo_Click"--><!--
                                                         <Image Height="19" Source="/Images/search_icon.png" Width="15" />
                                                     </Button>
                                                     <Button BorderBrush="Black" ClipToBounds="False" Foreground="White" Grid.Column="3" Grid.Row="1" 
-                                            Click="btnPartKitNo_Click"
                                             HorizontalAlignment="Left" Margin="222,0,0,0" Name="btnPartKitDesc" Style="{StaticResource NewType}" TabIndex="74" VerticalAlignment="Center" Width="23">
+                                                        --><!--Click="btnPartKitNo_Click"--><!--
                                                         <Image Height="19" Source="/Images/search_icon.png" Width="15" />
                                                     </Button>
                                                 </Grid>
@@ -1311,9 +1310,9 @@
                                                               TextBlock.TextAlignment="Center"
                                                               VirtualizingStackPanel.VirtualizationMode="Standard"
                                                               VirtualizingStackPanel.IsVirtualizing="True"
-                                                              HorizontalScrollBarVisibility="Auto"
-                                                              PreviewKeyDown="DGPartsKit_PreviewKeyDown"
-                                                              MouseDoubleClick="DGPartsKit_MouseDoubleClick" MaxHeight="425">
+                                                              HorizontalScrollBarVisibility="Auto" MaxHeight="425">
+                                                        --><!--PreviewKeyDown="DGPartsKit_PreviewKeyDown"
+                                                              MouseDoubleClick="DGPartsKit_MouseDoubleClick"--><!--
                                                         <DataGrid.Columns>
                                                             <DataGridTextColumn Binding="{Binding PartsMasterID}"  Header="" Visibility="Hidden" Width="0" IsReadOnly="True"    />
                                                             <DataGridTextColumn Binding="{Binding PartsNo}" Header="Part&#x0a;(#)" Visibility="Visible" Width="80" IsReadOnly="True" CellStyle="{StaticResource CellLeftAlign}"/>
@@ -1328,9 +1327,8 @@
                                                 </Grid>
                                             </Grid>
                                         </properties:AdvanceTrackerForTabControl>
-                                    </Expander>
+                                    </Expander>-->
 
-                                    -->
                                     <!--Parts Inventory-->
                                     <!--
                                     <Expander   Header="Parts Inventory Information" IsExpanded="True" Height="Auto" Name="InvInfo" TabIndex="1" HorizontalAlignment="Stretch" ExpandDirection="Down"

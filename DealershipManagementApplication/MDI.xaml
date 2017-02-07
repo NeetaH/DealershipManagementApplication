@@ -1,0 +1,14 @@
+﻿<Window x:Class="DealershipManagementApplication.MDI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="MDI" WindowState="Maximized" Height="300" Width="300">
+    <Grid>
+        <syncfusion:DocumentContainer Mode="TDI" x:Name="Doccontainer" Background="#f7f7f7"  Grid.Row="1" 
+                                      
+                                      AddTabDocumentAtLast="True"
+                                      ToolTip="{Binding Header}" Margin="-4,0,4,0" >
+        </syncfusion:DocumentContainer>
+
+    </Grid>
+</Window>
